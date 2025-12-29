@@ -73,7 +73,6 @@ hr.question-hr{
 }
 #test1-modal{
     background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
 }
 #test1-modal-content{
     background: var(--background-color-1);
@@ -485,5 +484,6 @@ span.important{
         width: 500px;
         height: 350px;
     }
+
 
 }
