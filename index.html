@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="الملفات الرئيسية/styles.css">
+
+    <title>المشروع</title>
+</head>
+<body>
+
+    
+    <div id="auth">
+        <div id="auth-border">
+            <h1 id="auth-header">تسجيل الدخول/انشاء حساب من خلال البريد الاكتروني</h3>
+            <input type="email" id="email" placeholder="أدخل البريد الاكتروني" class="auth-inputs">
+            <input type="password" id="password" placeholder="أدخل كلمة السر" class="auth-inputs">
+            <button id="sign-up" class="auth-btns" onclick="signUp()">انشاء حساب</button>
+            <button id="sign-in" class="auth-btns" onclick="signIn()">تسجيل الدخول</button>
+        </div>
+    </div>
+
+
+
+ <div id="adminModal" class="modal">
+  <div class="modal-content">
+    <h2>لوحة مدير النظام</h2>
+    <h3 class="red" id="admin-errors"></h3>
+    <label for="ban-by-id" id="ban-by-id-label">حذر أو الغاء الحذر من خلال بطاقة تعريف(ID)</label>
+    <input type="text" id="ban-by-id" class="adminModalInput">
+    <button class="adminModalBtn" id="ban-btn">حذر</button><button class="adminModalBtn" id="unban-btn">الغاء حذر</button><br>
+    <button id="closeAdminModal" class="adminModalBtn">اغلاق</button>
+  </div>
+</div>
+<div id="test1-modal" class="test-modal">
+        <div id="test1-modal-content">
+            <h2>امتحان المستوى الأول</h2>
+            <hr>
+            <div id="test1-questions-container">
+                <div id="test1-question1" class="test1-question">
+                    <h3>1. أي من هذه الأرقام ليس رقمًا؟</h3>
+                    <label><input type="radio" name="q1" value="a"> 56858</label><br>
+                    <label><input type="radio" name="q1" value="b"> 7806670876</label><br>
+                    <label><input type="radio" name="q1" value="c"> لا 78</label><br>
+                    <label><input type="radio" name="q1" value="d"> 0</label><br>
+                </div>
+                <hr class="question-hr">
+                <div id="test1-question2" class="test1-question">
+                    <h3>2. 5346 &gt; ____ (أكمل)</h3>
+                    <label><input type="radio" name="q2" value="a"> 6666</label>
+                    <label><input type="radio" name="q2" value="b"> 000654</label>
+                    <label><input type="radio" name="q2" value="c"> 5346</label>
+                    <label><input type="radio" name="q2" value="d"> 5347</label>
+                </div>
+                <hr class="question-hr">
+                <div id="test1-question3" class="test1-question">
+                    <img src="الوسائط/الصور/عدد الأشياء في الاختبار.jpg" alt="عد الأشياء في الأختبار" class="medium-img">
+                    <h3>3. كم عدد <span class="important">الأشياء</span> في الصورة؟</h3>
+                    <label><input type="radio" name="q3" value="a"> 5</label>
+                    <label><input type="radio" name="q3" value="b"> 7</label>
+                    <label><input type="radio" name="q3" value="c"> 6</label>
+                    <label><input type="radio" name="q3" value="d"> 8</label>
+                    <br><br><br>
+                </div>
+                <hr class="question-hr">
+                <div id="test1-question4" class="test1-question">
+                    <h3>4. ما هي القيمة للرقم 5 في الرقم 37542؟</h3>
+                    <label><input type="radio" name="q4" value="a"> 375</label>
+                    <label><input type="radio" name="q4" value="b"> 542</label>
+                    <label><input type="radio" name="q4" value="c"> 500</label>
+                    <label><input type="radio" name="q4" value="d"> 5000</label>
+                </div>
+                <hr class="question-hr">
+                <div id="test1-question5" class="test1-question">
+                    <h3>5. كيف تكتب الرقم 6789 بالحروف؟</h3>
+                    <label><input type="radio" name="q5" value="a"> ستة آلاف و سبعمائة و تسعة و ثمانون</label>
+                    <label><input type="radio" name="q5" value="b"> ستة آلاف و سبعمائة و ثمانية و تسعون</label>
+                    <label><input type="radio" name="q5" value="c"> سبعة آلاف و ستمائة و تسعة و ثمانون</label>
+                    <label><input type="radio" name="q5" value="d"> سبعة آلاف و ستمائة و ثمانية و تسعون</label>
+                </div>
+                <hr class="question-hr">
+                <div id="test1-question6" class="test1-question">
+                    <h3>6. رتب الأرقام التالية تصاعديًا <span class="important">من اليمين إلي اليسار</span>: 345, 123, 567, 234</h3>
+                    <label><input type="radio" name="q6" value="a"> 567, 345, 234, 123</label>
+                    <label><input type="radio" name="q6" value="b"> 123, 234, 345, 567</label>
+                    <label><input type="radio" name="q6" value="c"> 234, 123, 345, 567</label>
+                    <label><input type="radio" name="q6" value="d"> 345, 234, 123, 567</label>
+                </div>
+                <hr class="question-hr">
+                <div id="test1-question7" class="test1-question">
+                    <img src="الوسائط/الصور/الساعة في الاختبار.jpg" alt="الساعة في الأختبار" class="medium-img">
+                    <h3>7. يشير هذا العقرب في الصورة المقابلة <br>إلي الساعة, فما الرقم الذي <span class="important">أكبر من <br>الرقم المشار إليه</span></h3>
+                    <label><input type="radio" name="q7" value="a">10</label>
+                    <label><input type="radio" name="q7" value="b">11</label>
+                    <label><input type="radio" name="q7" value="c">12</label>
+                    <label><input type="radio" name="q7" value="d">9</label>
+                </div>
+                <hr class="question-hr">
+                <div id="test1-question8" class="test1-question">
+                    <h3>8. ما هي القيمة المكانية للرقم 3 في الرقم 300875؟</h3>
+                    <label><input type="radio" name="q8" value="a"> الآلاف</label>
+                    <label><input type="radio" name="q8" value="b"> 300000</label>
+                    <label><input type="radio" name="q8" value="c"> مئات الآلاف</label>
+                    <label><input type="radio" name="q8" value="d"> المئات</label>
+                </div>
+                <hr class="question-hr">
+                <div id="test1-question9" class="test1-question">
+                    <h3>9. أي من الأرقام التالية يكتب بشكل صحيح بالحروف؟</h3>
+                    <label><input type="radio" name="q9" value="a"> أربعة آلاف و خمسمائة و خمسة و أربعون (4545)</label>
+                    <label><input type="radio" name="q9" value="b"> أربعة آلاف و خمسمائة و خمسة و أربعون (4554)</label>
+                    <label><input type="radio" name="q9" value="c"> أربعة آلاف و خمسمائة و خمسة و أربعون (4455)</label>
+                    <label><input type="radio" name="q9" value="d"> أربعة آلاف و خمسمائة و خمسة و أربعون (5445)</label>
+                </div>
+                <hr class="question-hr">
+                <div id="test1-question10" class="test1-question">
+                    <h3>امامك رقم <span class="important">6546</span> أكتب رقم أكبر منه و رقم أصغر منه و رقم يساويه</h3>
+                    <input type="text" id="q10-answer1" placeholder="أكبر من 6546" class="test1-input">
+                    <input type="text" id="q10-answer2" placeholder="أصغر من 6546" class="test1-input">
+                    <input type="text" id="q10-answer3" placeholder="يساوي 6546" class="test1-input">
+                </div>
+                <hr class="question-hr">
+                <button id="submit-test1" onclick="submitTest1()" class="test-submit-btn">إرسال الإجابات</button>
+            </div>
+        </div>  
+</div>
+
+
+<div id="main-container">
+    <header id="header">
+        <button id="adminToggleBtn">
+  لوحة مدير النظام
+</button>
+<button id="sign-out" onclick="signOut()">تسجيل الخروج</button>
+
+
+        <div id="profile">
+            <div id="uid-container">بطاقة التعريف(ID): <span id="uid" class="red-white-border">2352</span></div>
+            <div id="lvl-container">المستوي: <span id="lvl" class="red-white-border">1</span></div>
+        </div>
+ 
+
+
+    </header>
+    <nav id="side_bar">
+        <!--level 1 start-->    
+            <div id="level_1" class="levels">المستوى الأول: عد الأرقام</div>
+            <div id="chapters_lvl_1_container" class="chapter_containers"></div>
+        <!--level 1 end-->
+
+    </nav>
+ 
+    <main id="main">
+        <h1 class="chapter-headers">مقدمة للأرقام</h1>
+       <hr>
+       <br>
+       <br>
+       
+       <img src="الوسائط/الصور/1-10.png" class="large-img">
+       <h5>هل لاحظت شيئا؟</h5>
+       <p><span class="important">1</span>: رقم, <span class="important">2</span>: رقم, <span class="important">3</span>: رقم,</p>
+       <p><span class="important">أرفام: 1 2 3 4 5 6 7 8 9</span></p>
+       <p><b>استنتاج</b>: أي شيء من: 1 2 3 4 5 6 7 8 9 0، هو رقم</p><br><br><br>
+       <br><img src="الوسائط/الصور/أحجام الأرقام.jpg" class="large-img">
+       <p>الأرقام لديها <span class="important">كمية</span> <b>كما في الصورة التالية</b></p>
+       <h3><span class="important">الكمية:</span></h3><p>يعني تستخدمها <span class="important"> لعد</span>أي شيء
+    </p>
+    
+    <p>مثال:<br><br> 5 كرات<br> 4 تفاحات<br> 3 بيتزا<br> 2 سحابة (سحابتان)<br> 1 قرن مسلجات</p>
+    <img src="الوسائط/الصور/كمية الرقم.jpg" class="large-img">
+    <h3>لاحظ ما يلي:</h3><br>
+    
+    <p>كما ترون فإن الرقم يمثل كمية الأشياء</p>
+    <p>لذا، إذا كان لدي <span class="important">3</span> تفاحات، فهذا يعني أن لدي <span class="important">3</span> منها</p>
+    <p>مثل هذا:<br><br>🍎🍎🍎</p>
+    <p>أنت تعرف العلامة "<span class="important">=</span>" والتي تعني "<span class="important">متساوي</span>"</p>
+    <p>الآن سوف نمثل الأرقام بO:<br>1 = O<br>2 = OO<br>3 = OOO<br>4 = OOOO<br>5 = OOOOO
+        <br>6 = OOOOOO<br>7 = OOOOOOO<br>8 = OOOOOOOO <br>9 = OOOOOOOOO<br>10 = OOOOOOOOOO</p>
+        <p>الآن دورك</p><br>
+        <h3>قم بتمثيل الأعداد التالية بـO:</h3>
+        <div class="question-machine-1">
+            <span class="result" id="result-1"></span><br> قم بتمثيل<span id="question-1" class="important">1</span> في المربع التالي<br>
+            <button class="check-btn-1" onclick="checkAnswer1()">تحقق من الإجابة</button>
+            <input type="text" class="user-input-1" id="answer-input-1" placeholder="اكتب اجابتك هنا" maxlength="10">
+
+        </div>
+    </main>
+    
+</div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <script>
+   const firebaseConfig = {
+            apiKey: "AIzaSyB1-w_I6PEQtGsD2ovwirPfAptwPXAmcYM",
+            authDomain: "anything-d278e.firebaseapp.com",
+            projectId: "anything-d278e",
+            storageBucket: "anything-d278e.firebasestorage.app",
+            messagingSenderId: "554140137730",
+            appId: "1:554140137730:web:5e1f31759f3a8e7f196a1b"
+        };
+
+    firebase.initializeApp(firebaseConfig);
+
+    window.auth = firebase.auth();
+    window.db = firebase.firestore();
+    </script>
+    <script src="الملفات الرئيسية/scripts.js"></script>    
+
+</body>
+
+</html>
